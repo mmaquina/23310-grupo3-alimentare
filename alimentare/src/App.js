@@ -3,13 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Importar Componentes
-import NavBar from './components/Navbar';
-import Inicio from './components/Inicio';
-import Agendas from './components/Agendas';
-import Calendarios from './components/Calendarios';
-import Cuadernos from './components/Cuadernos';
-import Contacto from './components/Contacto';
-import Footer from './components/Footer';
+import NavBar from './Componentes/Navbar';
+import Inicio from './Paginas/Inicio';
+import Recetas from './Paginas/Recetas';
+import Alimentos from './Paginas/Alimentos';
+import Login from './Componentes/Login';
+import Contacto from './Paginas/Contacto';
+import Footer from './Componentes/Footer';
 
 function App() {
   return (
@@ -18,9 +18,9 @@ function App() {
       
       <Routes>
          <Route path='/'element={ <Inicio />}/>
-         <Route path='/Agendas' element={ <Agendas/>}/>
-         <Route path='/Calendarios' element={ <Calendarios/>}/>
-         <Route path='/Cuadernos' element={ <Cuadernos/>}/>
+         <Route path='/Recetas' element={ <Recetas/>}/>
+         <Route path='/Alimentos' element={ <Alimentos/>}/>
+         <Route path='/Login' element={ <Login/>}/>
          <Route path='/Contacto'  element={<Contacto/>}/>
       </Routes>
           
