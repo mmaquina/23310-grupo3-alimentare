@@ -1,12 +1,12 @@
 import {Navbar, Nav, Container} from 'react-bootstrap';
-import { Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Logo from '../Imagenes/alimentare.png'
 
 const navbarPrincipal = () => {
   return (
     <Navbar className="navBg" bg="light" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/" >
+        <Navbar.Brand as={Link} to="/">
             <img src={Logo} alt="Alimentare" width="100" height="100" className='d-inline-block align-middle'/> Alimentare
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

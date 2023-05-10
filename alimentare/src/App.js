@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Componentes/Navbar';
 import Footer from './Componentes/Footer';
 import Login from './Componentes/Login';
+
 //Importar Paginas
 import Inicio from './Paginas/Inicio';
 import Recetas from './Paginas/Recetas';
