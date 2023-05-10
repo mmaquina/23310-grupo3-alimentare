@@ -12,7 +12,6 @@ import Recetas from './Paginas/Recetas';
 import Alimentos from './Paginas/Alimentos';
 import Contacto from './Paginas/Contacto';
 
-
 function App() {
   return (
     <>
