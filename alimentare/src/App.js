@@ -4,12 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Importar Componentes
 import NavBar from './Componentes/Navbar';
+import Footer from './Componentes/Footer';
+import Login from './Componentes/Login';
+//Importar Paginas
 import Inicio from './Paginas/Inicio';
 import Recetas from './Paginas/Recetas';
 import Alimentos from './Paginas/Alimentos';
-import Login from './Componentes/Login';
 import Contacto from './Paginas/Contacto';
-import Footer from './Componentes/Footer';
+
 
 function App() {
   return (

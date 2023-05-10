@@ -7,7 +7,7 @@ const navbarPrincipal = () => {
     <Navbar className="navBg" bg="light" expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/" >
-            <img src={Logo} alt="SakuraArteEnPapel" width="100" height="100" className='d-inline-block align-middle'/> Sakura Arte en Papel
+            <img src={Logo} alt="Alimentare" width="100" height="100" className='d-inline-block align-middle'/> Alimentare
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
