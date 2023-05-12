@@ -71,6 +71,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ### componentes 
-boostrap
-react-dom-router
-https://www.npmjs.com/package/react-floating-whatsapp
+react-bootstrap
+react-router-dom
+react-floating-whatsapp = https://www.npmjs.com/package/react-floating-whatsapp
