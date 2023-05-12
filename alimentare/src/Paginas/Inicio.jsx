@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Inicio() {
   return (
-    <div>Inicio</div>
+    <body>
+      <p className="col-md-4 mb-0 text-body-secondary">Alimentare </p>
+    </body>
+    
   )
 }

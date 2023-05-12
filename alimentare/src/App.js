@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Importar Componentes
@@ -26,7 +26,7 @@ function App() {
          <Route path='/Contacto'  element={<Contacto/>}/>
       </Routes>
           
-      <Footer/>
+     <Footer/>
 
     </>
   );
