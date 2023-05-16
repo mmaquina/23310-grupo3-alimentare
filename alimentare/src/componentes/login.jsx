@@ -11,8 +11,8 @@ function LoginComponent() {
 
                   <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
 
-                    <h3 className="fw-bold mb-3 ps-5 pb-3 text-center" style={{ letterSpacing:   '1px' }}>Log in
-                    </h3>
+                      <h3 className="fw-bold mb-3 ps-5 pb-3 text-center" style={{ letterSpacing: '1px' }}>Log in
+                      </h3>
 
                       <InputGroup className="mb-4 mx-5 w-100">
                           <InputGroup.Text id="basic-addon1"><Envelope /></InputGroup.Text>
@@ -26,7 +26,7 @@ function LoginComponent() {
                       <InputGroup className="mb-4 mx-5 w-100">
                           <InputGroup.Text id="basic-addon2"><Unlock /></InputGroup.Text>
                           <Form.Control
-                              placeholder="mail address"
+                              placeholder="Contraseña"
                               aria-label="Username"
                               aria-describedby="basic-addon1"
                           />
@@ -39,13 +39,13 @@ function LoginComponent() {
                       <p className='ms-5'>Don't have an account? <a href="#!" class="link-info">Register here</a>
                       </p>
 
-                </div>
+                  </div>
 
-            </Col>
+              </Col>
 
-        </Row>
+          </Row>
 
-    </Container>
+      </Container>
   );
 }
 
