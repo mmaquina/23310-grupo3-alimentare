@@ -5,8 +5,8 @@ import CardImagen from '../Imagenes/verduras.png'
 
 function GridExample() {
   return (
-    <Row xs={2} md={4} className="xs-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
+    <Row xs={2} md={4} className="g-4">
+      {Array.from({ length: 3 }).map((_, idx) => (
         <Col>
           <Card>
             <Card.Img variant="top" src={CardImagen} />
