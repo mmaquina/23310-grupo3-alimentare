@@ -1,9 +1,11 @@
 import React from 'react';
 import { MDBInput,MDBTextArea, MDBCheckbox, MDBBtn } from 'mdb-react-ui-kit';
 
+
 export default function App() {
   return (
-    
+   
+<div>
     <form id='form' className='text-center' style={{ width: '100%', maxWidth: '300px' }}>
       <h2>Contacto</h2>
 
@@ -21,5 +23,6 @@ export default function App() {
         Enviar
       </MDBBtn>
     </form>
+    </div>   
   );
 }

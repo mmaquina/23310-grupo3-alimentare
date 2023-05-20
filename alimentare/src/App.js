@@ -11,7 +11,7 @@ import Inicio from './Paginas/Inicio';
 import Recetas from './Paginas/Recetas';
 import Alimentos from './Paginas/Alimentos';
 import Contacto from './Paginas/Contacto';
-import Login from './Paginas/Login';
+import Login from './Paginas/Login_2';
 
 function App() {
   return (
