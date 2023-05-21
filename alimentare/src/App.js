@@ -3,13 +3,16 @@ import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Importar Componentes
-import NavBar from './components/Navbar';
-import Inicio from './components/Inicio';
-import Agendas from './components/Agendas';
-import Calendarios from './components/Calendarios';
-import Cuadernos from './components/Cuadernos';
-import Contacto from './components/Contacto';
-import Footer from './components/Footer';
+import NavBar from './Componentes/Navbar';
+import Footer from './Componentes/Footer';
+
+import Inicio from './Paginas/Inicio';
+import Recetas from './Paginas/Recetas';
+import Alimentos from './Paginas/Alimentos';
+import Contacto from './Paginas/Contacto';
+import Login from './Paginas/Login_2';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Registro from "./Componentes/RegistroUsuario";
 
 function App() {
   return (
