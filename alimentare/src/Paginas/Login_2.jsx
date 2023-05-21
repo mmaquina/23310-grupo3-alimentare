@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import Registro from "../Componentes/RegistroUsuario";
 
 import '../Style/Login_2.css';
 
@@ -71,6 +72,11 @@ function App() {
         <div className="button-container">
           <input type="submit" />
         </div>
+        <br></br>
+        <p><a class="text-muted link-info" href="#!" >¿Olvidaste tu password?</a>
+        </p>
+        <p>¿Todavía no tenés una cuenta? <a href='/Registro' class="link-info">Registrate</a>
+        </p>
       </form>
     </div>
   );
