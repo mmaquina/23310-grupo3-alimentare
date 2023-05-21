@@ -11,14 +11,14 @@ const navbarPrincipal = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="mx-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/Recetas">Recetas</Nav.Link>
             <Nav.Link as={Link} to="/Alimentos">Alimentos</Nav.Link>
-            <Nav.Link as={Link} to="/Login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/Contacto">Contacto</Nav.Link>
+            <Nav.Link as={Link} to="/Contacto_2">Contacto</Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+            <Nav.Link as={Link} to="/Login">Login</Nav.Link>
+          </Navbar.Collapse>
       </Container>
     </Navbar>
   );

@@ -9,9 +9,8 @@ import Footer from './Componentes/Footer';
 import Inicio from './Paginas/Inicio';
 import Recetas from './Paginas/Recetas';
 import Alimentos from './Paginas/Alimentos';
-import Contacto from './Paginas/Contacto';
+import Contacto from './Paginas/Contacto_2';
 import Login from './Paginas/Login_2';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Registro from "./Componentes/RegistroUsuario";
 
 function App() {
