@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### componentes 
+react-bootstrap
+react-router-dom
+react-floating-whatsapp = https://www.npmjs.com/package/react-floating-whatsapp
+mdb-react-ui-kit = Instalacion npm i mdb-react-ui-kit
+
+sitios
+https://mdbootstrap.com/docs/react/extended/login-form/
