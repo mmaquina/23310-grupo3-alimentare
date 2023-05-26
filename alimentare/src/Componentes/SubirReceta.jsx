@@ -19,8 +19,8 @@ function SubirReceta() {
     return (
         <Container>
             <Row className='justify-content-center'>
-                <Col sm='9'>
-                    <div className='d-flex flex-column justify-content-center h-custom-2 w-75 pt-4'>
+                <Col sm='10'>
+                    <div className='d-flex flex-column justify-content-center h-custom-2 w-100 pt-4'>
 
                         {/* Controla los datos enviados por el formulario cuando se hace click en el boton submit */}
                         <Form onSubmit={manejaSubmit}>
