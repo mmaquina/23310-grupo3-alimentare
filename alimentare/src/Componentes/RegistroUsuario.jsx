@@ -39,9 +39,9 @@ function Registro() {
           <div className="d-flex flex-column justify-content-center h-custom-2 w-75 pt-4">
             {/* Controla los datos enviados por el formulario cuando se hace click en el boton submit */}
             <Form onSubmit={manejaSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="correo">
                 <Form.Label>Correo Electrónico</Form.Label>
-                <Form.Control id="correo" type="email" placeholder="ejemplo@mail.com" required name="email"/>
+                <Form.Control type="email" placeholder="ejemplo@mail.com" required name="email"/>
                 <Form.Control.Feedback type="invalid">
                   Por favor ingrese su correo electrónico.
                 </Form.Control.Feedback>
@@ -50,12 +50,11 @@ function Registro() {
                 </Form.Text>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3" controlId="contrasenia1">
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   required
                   name="contrasenia1"
-                  id="contrasenia1"
                   type="password"
                   placeholder="Contraseña"
                 />
@@ -64,12 +63,11 @@ function Registro() {
                 </Form.Control.Feedback>                
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3" controlId="contrasenia2">
                 <Form.Label>Repetir contraseña</Form.Label>
                 <Form.Control
                   name="contrasenia2"
                   required
-                  id="contrasenia2"
                   type="password"
                   placeholder="Repetir contraseña"
                   isInvalid={!passwordMatch}
