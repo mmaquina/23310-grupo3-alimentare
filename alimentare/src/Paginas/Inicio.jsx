@@ -2,10 +2,12 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CardImagen from '../Imagenes/verduras.png'
+import { Container} from 'react-bootstrap';
 
 function GridExample() {
   return (
-    <Row xs={2} md={4} className="g-4">
+    <Container className='me-auto' >
+   <Row xs={2} md={4} className="g-4">
       {Array.from({ length: 3 }).map((_, idx) => (
         <Col>
           <Card>
@@ -22,6 +24,7 @@ function GridExample() {
         </Col>
       ))}
     </Row>
+    </Container>
   );
 }
 
