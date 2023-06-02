@@ -13,6 +13,8 @@ import Contacto from './Paginas/Contacto';
 import Login from './Paginas/Login_2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Registro from "./Componentes/RegistroUsuario";
+import SubirReceta from "./Componentes/SubirReceta";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
          <Route path='/Login' element={ <Login/>}/>
          <Route path='/Contacto'  element={<Contacto/>}/>
          <Route path='/Registro'  element={<Registro/>}/>
+         <Route path='/SubirReceta' element={ <SubirReceta/>}/>
 
       </Routes>
           
