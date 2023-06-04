@@ -4,3 +4,4 @@ Sitio de recetas y dietética. Con conexión a base de datos para subir recetas 
 ## Tecnologías
 - React
 - Bootstrap
+- Firebase
