@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import Registro from "../Componentes/RegistroUsuario";
-
+//import ReactDOM from "react-dom";
 import '../Style/Login_2.css';
 
 function App() {
