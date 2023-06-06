@@ -1,8 +1,31 @@
 import { Container, Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { collection, getDocs, setDoc, doc, Timestamp } from 'firebase/firestore/lite';
+import db from './firebase/FirebaseConfig.jsx';
+
+
 
 function SubirReceta() {
+
+    async function getProductos(proddb) {
+        const productosCol = collection(proddb, 'productos');
+        const productosSnapshot = await getDocs(productosCol);
+        const productosList = productosSnapshot.docs.map(doc => doc.data());
+        return productosList;
+    }
+    
+    getProductos(db).then((response) => console.log(response) );
+
+    async function setRecetas(proddb, receta) {
+        const seconds = Timestamp.fromDate(new Date()).seconds
+        console.log("timestamp:", seconds);
+        const docData = doc(proddb, 'recetas', seconds.toString() );
+        await setDoc( docData, receta );
+        
+        return true;
+    }
+    
     const manejaSubmit = (event) => {
         event.preventDefault(); // Evita la recarga de la página por defecto al enviar el formulario
 
@@ -14,7 +37,7 @@ function SubirReceta() {
         console.log('Titulo:', titulo);
         console.log('Receta:', recetaText);
         console.log('Ingredientes:', ingredientes);
-
+        setRecetas(db, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes});
     };
     return (
         <Container>
