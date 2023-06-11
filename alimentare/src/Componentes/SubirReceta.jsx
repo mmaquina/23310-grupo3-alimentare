@@ -47,19 +47,19 @@ function SubirReceta() {
 
                         {/* Controla los datos enviados por el formulario cuando se hace click en el boton submit */}
                         <Form onSubmit={manejaSubmit}>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Group className="mb-3">
                                 <Form.Label>Título de la receta</Form.Label>
-                                <Form.Control id="titulo" type="text" placeholder="Título de la receta" />
+                                <Form.Control id="titulo" type="text" required placeholder="Título de la receta" />
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Group className="mb-3">
                                 <Form.Label>Ingredientes</Form.Label>
-                                <textarea class="form-control" id="ingredientes" rows="3"></textarea>
+                                <textarea className="form-control" id="ingredientes" rows="3" required></textarea>
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Group className="mb-3">
                                 <Form.Label>Receta</Form.Label>
-                                <textarea class="form-control" id="recetaText" rows="5"></textarea>
+                                <textarea className="form-control" id="recetaText" rows="5" required></textarea>
                             </Form.Group>
 
                             <Button variant="primary" type="submit">
