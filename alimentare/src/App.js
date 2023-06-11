@@ -7,12 +7,12 @@ import NavBar from './Componentes/Navbar';
 import Footer from './Componentes/Footer';
 
 import Inicio from './Paginas/Inicio';
-import Recetas from './Paginas/Recetas';
+import Recetas from './Componentes/recetas/GaleriaRecetas';
 import Alimentos from './Paginas/Alimentos';
 import Contacto from './Paginas/Contacto_2';
 import Login from './Paginas/Login_2';
 import Registro from "./Componentes/RegistroUsuario";
-import SubirReceta from "./Componentes/SubirReceta";
+import SubirReceta from "./Componentes/recetas/SubirReceta";
 
 
 function App() {
