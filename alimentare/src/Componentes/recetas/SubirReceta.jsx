@@ -4,14 +4,11 @@ import Form from 'react-bootstrap/Form';
 import db from '../firebase/FirebaseConfig.jsx';
 import {getItems, setItems}  from '../firebase/utils.jsx';
 
-const COLECCION_RECETAS = 'recetas'
+const COLECCION_RECETAS = 'recetas';
 
 function SubirReceta() {
 
-
     getItems(db, COLECCION_RECETAS).then((response) => console.log(response) );
-
-
     
     const manejaSubmit = (event) => {
         event.preventDefault(); // Evita la recarga de la página por defecto al enviar el formulario
@@ -56,8 +53,6 @@ function SubirReceta() {
                 </Col>
             </Row>
         </Container>
-
-
     );
 }
 
