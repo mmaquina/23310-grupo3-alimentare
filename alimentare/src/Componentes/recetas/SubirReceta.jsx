@@ -23,6 +23,9 @@ function SubirReceta() {
         setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes});
     };
     return (
+      <div className="relative isolate text-center">
+        <h2>Comparta su receta</h2>
+
         <Container>
             <Row className='justify-content-center'>
                 <Col sm='10'>
@@ -53,6 +56,7 @@ function SubirReceta() {
                 </Col>
             </Row>
         </Container>
+      </div>
     );
 }
 
