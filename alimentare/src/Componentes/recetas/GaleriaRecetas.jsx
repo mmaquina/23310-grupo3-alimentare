@@ -50,15 +50,18 @@ export default function Recetas() {
       <div className="container flex flex-wrap text-center">
       <MDBCardGroup>
 
-        <MDBRow className='row-cols-md-4 g-4'>
+        <MDBRow className='row-cols-md-5 g-5'>
             <Tarjeta receta={{
               Titulo: "Añadir receta", 
-              Receta: "Pulse para colaborar subiendo su propia receta a la página.",
-              foto: 'https://icon-library.com/images/add-photo-icon/add-photo-icon-17.jpg'}}/>
-        
+              Receta: "Pulse para subir su receta.",
+              foto: 'https://icon-library.com/images/add-photo-icon/add-photo-icon-17.jpg',
+              subirReceta: true}}
+            />
+
             {recetas.map((receta, index) => {
-              receta.foto = 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png';
-              receta.Receta = limitString(receta.Receta, 60) + '...';
+              receta.foto = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Turkish_Food_on_a_Plate.jpg/800px-Turkish_Food_on_a_Plate.jpg';
+              receta.Receta = limitString(receta.Receta, 35) + '...';
+              receta.subirReceta = false;
 
               return (
                 <div key={index}>

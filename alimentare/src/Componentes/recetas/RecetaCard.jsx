@@ -9,10 +9,15 @@ import {
 } from 'mdb-react-ui-kit';
 
 export default function Tarjeta(props) {
+  let link = '#';
+  if (props.receta.subirReceta) {
+    link = '/subirreceta';
+  } 
+
   return (
-    <MDBCol style={{ height: '260px'}}>
+    <MDBCol style={{ height: '250px'}}>
         <MDBCard className='h-100' >
-          <a href='/subirreceta'><MDBCardImage 
+          <a href={link}><MDBCardImage 
             src={props.receta.foto} 
             position='top' 
             alt='Agregar receta' 
