@@ -2,7 +2,7 @@ import Tarjeta from "./RecetaCard.jsx";
 import { React, useState, useEffect } from "react";
 import { getItems } from '../firebase/utils.jsx';
 import db from '../firebase/FirebaseConfig.jsx';
-import { MDBRow } from 'mdb-react-ui-kit';
+import { MDBRow, MDBCardGroup } from 'mdb-react-ui-kit';
 
 const COLECCION_RECETAS = 'recetas';
 
@@ -45,32 +45,20 @@ export default function Recetas() {
   console.log(recetas)
 
   return (
-    <div className="relative isolate  mt-20 text-center">
-      <div
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        aria-hidden="true"
-      >
-        <div
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#facc15] to-[#eff6ff] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-        />
-      </div>
-
+    <div className="relative isolate text-center">
       <h2>Recetas</h2>
-      <div className="container  flex  flex-wrap text-center">
+      <div className="container flex flex-wrap text-center">
+      <MDBCardGroup>
+
         <MDBRow className='row-cols-md-4 g-4'>
             <Tarjeta receta={{
               Titulo: "Añadir receta", 
-              Receta: "Pulse para colaborar con su propia receta a la página.",
+              Receta: "Pulse para colaborar subiendo su propia receta a la página.",
               foto: 'https://icon-library.com/images/add-photo-icon/add-photo-icon-17.jpg'}}/>
         
             {recetas.map((receta, index) => {
-              console.log(receta)
               receta.foto = 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png';
-              receta.Receta = limitString(receta.Receta, 40) + '...';
+              receta.Receta = limitString(receta.Receta, 60) + '...';
 
               return (
                 <div key={index}>
@@ -79,6 +67,7 @@ export default function Recetas() {
               );
             })}
         </MDBRow>
+      </MDBCardGroup>
 
       </div>  
     </div>

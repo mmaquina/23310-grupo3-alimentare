@@ -10,9 +10,13 @@ import {
 
 export default function Tarjeta(props) {
   return (
-    <MDBCol>
-        <MDBCard className='h-100'>
-          <a href='/subirreceta'><MDBCardImage src={props.receta.foto} position='top' alt='Agregar receta' height={100}/></a>
+    <MDBCol style={{ height: '260px'}}>
+        <MDBCard className='h-100' >
+          <a href='/subirreceta'><MDBCardImage 
+            src={props.receta.foto} 
+            position='top' 
+            alt='Agregar receta' 
+            style={{ maxHeight: '150px', width: '100%', objectFit: 'contain'}} /></a>
           <MDBCardBody>
             <MDBCardTitle>{props.receta.Titulo}</MDBCardTitle>
             <MDBCardText>
@@ -20,6 +24,6 @@ export default function Tarjeta(props) {
             </MDBCardText>
           </MDBCardBody>
         </MDBCard>
-      </MDBCol>
+    </MDBCol>
   );
 }
