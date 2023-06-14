@@ -1,5 +1,5 @@
-import { auth } from "../Componentes/firebase/FirebaseConfig";
-import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
+import { signInWithEmailAndPassword, getAuth, signInWithPopup,  } from "firebase/auth";
 import React, { useState } from "react";
 //import ReactDOM from "react-dom";
 import '../Style/Login_2.css';
@@ -27,6 +27,15 @@ function App() {
         const errorMessage = error.message;
       });
   }
+
+  const signInWithGoogle = async ()=>{
+    try {
+      await signInWithPopup(auth,googleProvider)
+
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
   // User Login info
   const database = [
@@ -92,6 +101,10 @@ function App() {
           <input type="submit" onClick={signIn} />
         </div>
         <br></br>
+        <p>
+          <button onClick={signInWithGoogle} >Iniciar sesión con Google</button>
+        </p>
+
         <p>
           <a class="text-muted link-info" href="#!" >¿Olvidaste tu password?</a>
         </p>
