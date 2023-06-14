@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "git-crypt": "^0.0.1"
+  }
+}

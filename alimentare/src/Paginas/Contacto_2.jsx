@@ -35,7 +35,7 @@ import Form from 'react-bootstrap/Form';
 						        <Form.Text className="text-muted">
 									        Tu informacion no sera compartido con nadie.
 						        </Form.Text>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit"> 
                             Enviar
                     </Button>
                   </Form>
