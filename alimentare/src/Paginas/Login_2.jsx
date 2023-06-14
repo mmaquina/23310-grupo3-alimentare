@@ -1,11 +1,32 @@
+import { auth } from "../Componentes/firebase/FirebaseConfig";
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import React, { useState } from "react";
 //import ReactDOM from "react-dom";
 import '../Style/Login_2.css';
 
 function App() {
   // React States
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  console.log(auth?.currentUser?.email)//Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
+
+
+  const signIn = async () => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  }
 
   // User Login info
   const database = [
@@ -20,7 +41,7 @@ function App() {
   ];
 
   const errors = {
-    uname: "invalid username",
+    uname: "invalid email",
     pass: "invalid password"
   };
 
@@ -58,20 +79,21 @@ function App() {
     <div className="form">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label>Usuario </label>
-          <input type="text" name="uname" required />
+          <label>Correo electronico </label>
+          <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} name="uname" required />
           {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required />
+          <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} name="pass" required />
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" onClick={signIn} />
         </div>
         <br></br>
-        <p><a class="text-muted link-info" href="#!" >¿Olvidaste tu password?</a>
+        <p>
+          <a class="text-muted link-info" href="#!" >¿Olvidaste tu password?</a>
         </p>
         <p>¿Todavía no tenés una cuenta? <a href='/Registro' class="link-info">Registrate</a>
         </p>
