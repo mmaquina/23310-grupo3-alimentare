@@ -1,5 +1,5 @@
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
-import { signInWithEmailAndPassword, getAuth, signInWithPopup,  } from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth, signInWithPopup, } from "firebase/auth";
 import React, { useState } from "react";
 //import ReactDOM from "react-dom";
 import '../Style/Login_2.css';
@@ -28,9 +28,9 @@ function App() {
       });
   }
 
-  const signInWithGoogle = async ()=>{
+  const signInWithGoogle = async () => {
     try {
-      await signInWithPopup(auth,googleProvider)
+      await signInWithPopup(auth, googleProvider)
 
     } catch (error) {
       console.log(error)
