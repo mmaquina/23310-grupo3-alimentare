@@ -12,7 +12,7 @@ function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   console.log(auth?.currentUser?.email)//Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
-
+  
 
   const signIn = async () => {
     const auth = getAuth();
@@ -20,6 +20,7 @@ function App() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        console.log(user);
         // ...
       })
       .catch((error) => {
@@ -108,7 +109,12 @@ function App() {
         <p>
           <a class="text-muted link-info" href="#!" >¿Olvidaste tu password?</a>
         </p>
-        <p>¿Todavía no tenés una cuenta? <a href='/Registro' class="link-info">Registrate</a>
+        <p>¿Todavía no tenés una cuenta? 
+          <a href='/Registro' class="link-info">Registrate</a>
+        </p>
+
+        <p>Usuario logueado 
+          <p ></p>
         </p>
       </form>
     </div>
