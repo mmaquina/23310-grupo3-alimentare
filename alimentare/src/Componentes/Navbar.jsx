@@ -2,7 +2,7 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Logo from '../Imagenes/alimentare.png'
 import { signOut } from "firebase/auth";
-import { auth } from "../Componentes/firebase/FirebaseConfig"
+import { auth } from "../Componentes/firebase/FirebaseConfig";
 
 
 const logout = async () => {
