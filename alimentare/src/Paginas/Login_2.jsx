@@ -1,47 +1,57 @@
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
-import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth, signInWithPopup, } from "firebase/auth";
 import React, { useState } from "react";
 import '../Style/Login_2.css';
 import { Button } from "react-bootstrap";
 
 function App() {
+  // React States
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [password, setPassword] = useState("")
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  let usuario = auth?.currentUser?.email;
-  console.log("Usuario: " + usuario);
+  console.log(auth?.currentUser?.email)//Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
+
 
   const signIn = async () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        // Signed in
         const user = userCredential.user;
-        console.log(user);
-        setMessage("Bienvenido: " + auth.email ); //TODO muestra el usuario logeado como undefined
+        // ...
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode)
         const errorMessage = error.message;
-        switch (errorCode) {
-          case "auth/wrong-password":
-            setMessage("La contraseña es incorrecta");
-            break;
-          case "auth/user-not-found":
-            setMessage("El usuario no ha sido encontrado");
-            break;
-          case "auth/invalid-email":
-            setMessage("El correo electrónico es inválido");
-            break;
-          case "auth/missing-password":
-            setMessage("La contraseña no ha sido proporcionada");
-            break;
-          default:
-            setMessage("");
-            break;
-        }        
       });
+  }
+
+  const signInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider)
+
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  // User Login info
+  const database = [
+    {
+      username: "user1",
+      password: "pass1"
+    },
+    {
+      username: "user2",
+      password: "pass2"
+    }
+  ];
+
+  const errors = {
+    uname: "invalid email",
+    pass: "invalid password"
   };
 
   const signInWithGoogle = async () => {
@@ -59,31 +69,37 @@ function App() {
       <form>
         <div className="input-container">
           <label>Correo electronico </label>
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            name="uname"
-            required
+          <input 
+          type="email" 
+          placeholder="Email" 
+          onChange={(e) => setEmail(e.target.value)} 
+          name="uname" 
+          required 
           />
+          {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            name="pass"
-            required
+          <input 
+          type="password" 
+          placeholder="Password" 
+          onChange={(e) => setPassword(e.target.value)} 
+          name="pass" 
+          required 
           />
+          {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <Button variant="success" onClick={signIn}>Enviar</Button>
+          <input type="submit" onClick={signIn} />
         </div>
         <p>{message}</p>
         <br></br>
         <p>
-          <button onClick={signInWithGoogle}>Iniciar sesión con Google</button>
+          <button onClick={signInWithGoogle} >Iniciar sesión con Google</button>
+        </p>
+
+        <p>
+          <a class="text-muted link-info" href="#!" >¿Olvidaste tu password?</a>
         </p>
 
         <p>

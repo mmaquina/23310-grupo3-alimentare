@@ -9,6 +9,17 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: process.env.APIKEY,
+//   authDomain: "timetracker-374421.firebaseapp.com",
+//   projectId: "timetracker-374421",
+//   storageBucket: "timetracker-374421.appspot.com",
+//   messagingSenderId: process.env.MESSAGING_SENDER_ID,
+//   appId: process.env.APPID,
+//   measurementId: process.env.MEASUREMENTID
+// };
+
+//Configuración de base de datos para rama de Camilo
 const firebaseConfig = {
 };
 
