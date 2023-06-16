@@ -1,8 +1,8 @@
-import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
 import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
+import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import '../Style/Login_2.css';
-import { Button } from "react-bootstrap";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -23,7 +23,6 @@ function App() {
       .catch((error) => {
         const errorCode = error.code;
         console.log(errorCode)
-        const errorMessage = error.message;
         switch (errorCode) {
           case "auth/wrong-password":
             setMessage("La contraseña es incorrecta");
