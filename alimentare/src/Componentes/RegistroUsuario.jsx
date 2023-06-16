@@ -1,34 +1,21 @@
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { auth } from "../Componentes/firebase/FirebaseConfig";
 import { Container, Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 
 function Registro() {
-  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
 
-  const manejaSubmit = (event) => {
-    event.preventDefault(); // Evita la recarga de la página por defecto al enviar el formulario
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.stopPropagation();
-    } else {
-      const contrasenia1 = event.currentTarget.contrasenia1.value;
-      const contrasenia2 = event.currentTarget.contrasenia2.value;
+  const signUp = async () => {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password)
+      console.log(auth?.currentUser?.email)//Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
 
-      if (contrasenia1 !== contrasenia2) {
-        setPasswordMatch(false);
-        return;
-      } else {
-        setPasswordMatch(true);
-      }
-    // if (event.currentTarget.contrasenia1.value !== event.currentTarget.contrasenia2.value) {
-    //   console.log("no coinciden ")
-    //   event.stopPropagation();
-    // } 
-
-      console.log("Email:", event.currentTarget.correo.value);
-      console.log("Textarea:", event.currentTarget.contrasenia1.value);
-      console.log("Textarea:", event.currentTarget.contrasenia2.value);
+    } catch (error) {
+      console.log(error)
     }
   };
 
@@ -38,10 +25,10 @@ function Registro() {
         <Col sm="6">
           <div className="d-flex flex-column justify-content-center h-custom-2 w-75 pt-4">
             {/* Controla los datos enviados por el formulario cuando se hace click en el boton submit */}
-            <Form onSubmit={manejaSubmit}>
+            <Form>
               <Form.Group className="mb-3" controlId="correo">
                 <Form.Label>Correo Electrónico</Form.Label>
-                <Form.Control type="email" placeholder="ejemplo@mail.com" required name="email"/>
+                <Form.Control type="email" placeholder="ejemplo@mail.com" required name="email" onChange={(e) => setEmail(e.target.value)} />
                 <Form.Control.Feedback type="invalid">
                   Por favor ingrese su correo electrónico.
                 </Form.Control.Feedback>
@@ -57,27 +44,14 @@ function Registro() {
                   name="contrasenia1"
                   type="password"
                   placeholder="Contraseña"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <Form.Control.Feedback type="invalid">
                   Por favor ingrese una contraseña.
-                </Form.Control.Feedback>                
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="contrasenia2">
-                <Form.Label>Repetir contraseña</Form.Label>
-                <Form.Control
-                  name="contrasenia2"
-                  required
-                  type="password"
-                  placeholder="Repetir contraseña"
-                  isInvalid={!passwordMatch}
-                />
-                <Form.Control.Feedback type="invalid">
-                  Las contraseñas no coinciden.
                 </Form.Control.Feedback>
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button variant="primary" onClick={signUp}>
                 Enviar
               </Button>
             </Form>
