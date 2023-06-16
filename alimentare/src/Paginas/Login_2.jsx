@@ -80,6 +80,7 @@ function App() {
         <div className="button-container">
           <Button variant="success" onClick={signIn}>Enviar</Button>
         </div>
+        {/* Muestra el mensaje que devuelve la base de datos */}
         <p>{message}</p>
         <br></br>
         <p>

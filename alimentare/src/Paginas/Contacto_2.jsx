@@ -4,6 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function Contacto() {
+      const enviaComentario = async () => {
+
+      }
+
       return (
 
             <Container className='me-auto' >
@@ -30,12 +34,16 @@ function Contacto() {
 
                                           <Form.Group className="mb-3" controlId="formBasicPassword">
                                                 <Form.Label>Consulta</Form.Label>
-                                                <Form.Control type="text" placeholder="Descripcion" />
+                                                <Form.Control
+                                                      as="textarea"
+                                                      placeholder="Descripción"
+                                                      style={{ height: '100px' }}
+                                                />
                                           </Form.Group>
                                           <Form.Text className="text-muted">
                                                 Tu información no sera compartida con nadie.
                                           </Form.Text>
-                                          <Button variant="primary" type="submit">
+                                          <Button variant="primary" onClick={enviaComentario}>
                                                 Enviar
                                           </Button>
                                     </Form>
