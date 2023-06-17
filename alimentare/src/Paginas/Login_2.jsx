@@ -24,23 +24,6 @@ function App() {
         const errorCode = error.code;
         console.log(errorCode)
         const errorMessage = error.message;
-        switch (errorCode) {
-          case "auth/wrong-password":
-            setMessage("La contraseña es incorrecta");
-            break;
-          case "auth/user-not-found":
-            setMessage("El usuario no ha sido encontrado");
-            break;
-          case "auth/invalid-email":
-            setMessage("El correo electrónico es inválido");
-            break;
-          case "auth/missing-password":
-            setMessage("La contraseña no ha sido proporcionada");
-            break;
-          default:
-            setMessage("");
-            break;
-        }        
       });
   };
 
