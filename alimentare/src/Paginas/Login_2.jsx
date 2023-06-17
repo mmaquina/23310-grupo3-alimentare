@@ -1,8 +1,8 @@
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
 import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
+import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import '../Style/Login_2.css';
-import { Button } from "react-bootstrap";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -18,27 +18,53 @@ function App() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        setMessage("Bienvenido: " + auth.email ); //TODO muestra el usuario logeado como undefined
+        setMessage("Bienvenido " + userCredential.user.email ); 
+        limpiarFormulario();
       })
       .catch((error) => {
         const errorCode = error.code;
         console.log(errorCode)
-        const errorMessage = error.message;
+        switch (errorCode) {
+          case "auth/wrong-password":
+            setMessage("La contraseña es incorrecta");
+            break;
+          case "auth/user-not-found":
+            setMessage("El usuario no ha sido encontrado");
+            break;
+          case "auth/invalid-email":
+            setMessage("El correo electrónico es inválido");
+            break;
+          case "auth/missing-password":
+            setMessage("La contraseña no ha sido proporcionada");
+            break;
+          default:
+            setMessage("");
+            break;
+        }     
+        limpiarFormulario();   
       });
   };
+
+  function limpiarFormulario() {   
+    
+    document.getElementById('email').value = ''; 
+    document.getElementById('pass').value = ''; 
+  }
 
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      setMessage("Bienvenido: " + auth.email);
+      limpiarFormulario();
+      setMessage("Bienvenido");
     } catch (error) {
       console.log(error);
+      limpiarFormulario();
       setMessage("Error al iniciar sesión con Google");
     }
   };
 
   const renderForm = (
-    <div className="form">
+    <div id="formularioLogin" className="form">
       <form>
         <div className="input-container">
           <label>Correo electronico </label>
@@ -46,7 +72,7 @@ function App() {
             type="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
-            name="uname"
+            id="email"
             required
           />
         </div>
@@ -56,13 +82,14 @@ function App() {
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
-            name="pass"
+            id="pass"
             required
           />
         </div>
         <div className="button-container">
           <Button variant="success" onClick={signIn}>Enviar</Button>
         </div>
+        {/* Muestra el mensaje que devuelve la base de datos */}
         <p>{message}</p>
         <br></br>
         <p>
