@@ -12,7 +12,7 @@ export default function Tarjeta(props) {
           <a href={link}><Card.Img
             src={props.producto.foto} 
             position='top' 
-            alt='Agregar producto' 
+            alt='' 
             style={{ maxHeight: '150px', width: '100%', objectFit: 'contain'}} 
           /></a>
           <Card.Body>
