@@ -39,7 +39,6 @@ function Contacto() {
             // Reinicia el formulario completo
             document.getElementById('formularioContacto').reset(); 
       }
-
       
       return (
             <>
