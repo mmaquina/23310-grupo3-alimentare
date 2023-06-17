@@ -19,6 +19,7 @@ function App() {
         const user = userCredential.user;
         console.log(user);
         setMessage("Bienvenido " + userCredential.user.email ); 
+        limpiarFormulario();
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -39,22 +40,31 @@ function App() {
           default:
             setMessage("");
             break;
-        }        
+        }     
+        limpiarFormulario();   
       });
   };
+
+  function limpiarFormulario() {   
+    
+    document.getElementById('email').value = ''; 
+    document.getElementById('pass').value = ''; 
+  }
 
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+      limpiarFormulario();
       setMessage("Bienvenido");
     } catch (error) {
       console.log(error);
+      limpiarFormulario();
       setMessage("Error al iniciar sesión con Google");
     }
   };
 
   const renderForm = (
-    <div className="form">
+    <div id="formularioLogin" className="form">
       <form>
         <div className="input-container">
           <label>Correo electronico </label>
@@ -62,7 +72,7 @@ function App() {
             type="email"
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
-            name="uname"
+            id="email"
             required
           />
         </div>
@@ -72,7 +82,7 @@ function App() {
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
-            name="pass"
+            id="pass"
             required
           />
         </div>
