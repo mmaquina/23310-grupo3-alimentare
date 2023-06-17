@@ -1,5 +1,6 @@
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
 import { signInWithEmailAndPassword, getAuth, signInWithPopup, } from "firebase/auth";
+
 import React, { useState } from "react";
 import '../Style/Login_2.css';
 import { Button } from "react-bootstrap";
