@@ -8,7 +8,7 @@ import Footer from './Componentes/Footer';
 
 import Inicio from './Paginas/Inicio';
 import Recetas from './Componentes/recetas/GaleriaRecetas';
-import Alimentos from './Paginas/Alimentos';
+import Productos from './Componentes/recetas/GaleriaProductos';
 import Contacto from './Paginas/Contacto_2';
 import Login from './Paginas/Login_2';
 import Registro from "./Componentes/RegistroUsuario";
@@ -23,12 +23,11 @@ function App() {
       <Routes>
          <Route path='/'element={ <Inicio />}/>
          <Route path='/Recetas' element={ <Recetas/>}/>
-         <Route path='/Alimentos' element={ <Alimentos/>}/>
+         <Route path='/Productos' element={ <Productos/>}/>
          <Route path='/Login' element={ <Login/>}/>
          <Route path='/Contacto_2'  element={<Contacto/>}/>
          <Route path='/Registro'  element={<Registro/>}/>
          <Route path='/SubirReceta' element={ <SubirReceta/>}/>
-
       </Routes>
           
      <Footer/>
