@@ -1,4 +1,3 @@
-import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
 import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
 import { Button } from "react-bootstrap";
@@ -19,7 +18,7 @@ function App() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        setMessage("Bienvenido: " + auth.email ); //TODO muestra el usuario logeado como undefined
+        setMessage("Bienvenido " + userCredential.user.email ); 
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -47,7 +46,7 @@ function App() {
   const signInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      setMessage("Bienvenido: " + auth.email);
+      setMessage("Bienvenido");
     } catch (error) {
       console.log(error);
       setMessage("Error al iniciar sesión con Google");
