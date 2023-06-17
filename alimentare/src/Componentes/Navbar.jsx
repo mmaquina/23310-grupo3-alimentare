@@ -30,6 +30,7 @@ const navbarPrincipal = () => {
           </Nav>
           <Nav.Link as={Link} to="/Login">Login</Nav.Link>
           <Button onClick={logout} variant="outline-dark">Logout</Button>
+          {/* <Button variant="outline-dark">{usuario}</Button> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
