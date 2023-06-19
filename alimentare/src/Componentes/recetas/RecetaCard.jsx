@@ -2,10 +2,8 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
 export default function Tarjeta(props) {
-  let link = '#';
-  if (props.receta.subirReceta) {
-    link = '/subirreceta';
-  } 
+  const link = props.receta.link;
+
   return (
         <Col>
           <Card>
@@ -16,7 +14,7 @@ export default function Tarjeta(props) {
             style={{ maxHeight: '150px', width: '100%', objectFit: 'contain'}} 
           /></a>
           <Card.Body>
-            <Card.Title>{props.receta.Titulo}</Card.Title>
+            <Card.Title className='text-capitalize'>{props.receta.Titulo}</Card.Title>
             <Card.Text>
               {props.receta.Receta}
             </Card.Text>

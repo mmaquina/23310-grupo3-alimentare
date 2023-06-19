@@ -25,12 +25,13 @@ function limitString(inputString, limit) {
 export default function Recetas() {
   const [isLoading, setIsLoading] = useState(true);
   const [recetas, setRecetas] = useState(null);
-
+  const [ids, setIds] = useState(null);
 
   useEffect(() => {
     getItems(db, COLECCION_RECETAS)
     .then((response) => {
-      setRecetas(response); // ⬅️ Guardar datos
+      setRecetas(response.docs.map(doc => doc.data()));
+      setIds(response.docs.map(doc => doc.id)); // ⬅️ Guardar datos
       setIsLoading(false); // ⬅️ Desactivar modo "cargando"
     });
   }, []);
@@ -54,13 +55,14 @@ export default function Recetas() {
               Titulo: "Añadir receta", 
               Receta: "Pulse para subir su receta.",
               foto: 'https://icon-library.com/images/add-photo-icon/add-photo-icon-17.jpg',
-              subirReceta: true}}
+              link: '/subirreceta'}}
             />
 
             {recetas.map((receta, index) => {
               receta.foto = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Turkish_Food_on_a_Plate.jpg/800px-Turkish_Food_on_a_Plate.jpg';
               receta.Receta = limitString(receta.Receta, 35) + '...';
               receta.subirReceta = false;
+              receta.link =  '/' + ids[index];
 
               return (
                 <div key={index}>

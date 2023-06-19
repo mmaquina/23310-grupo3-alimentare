@@ -1,11 +1,10 @@
-import { collection, getDocs, setDoc, doc, Timestamp } from 'firebase/firestore/lite';
+import { collection, getDocs, setDoc, doc, getDoc, Timestamp } from 'firebase/firestore';
 
 
 export async function getItems(db, col) {
     const items = collection(db, col);
     const itemsSnapshot = await getDocs(items);
-    const itemsList = itemsSnapshot.docs.map(doc => doc.data());
-    return itemsList;
+    return itemsSnapshot;
 }
 
 export async function setItems(db, col, item) {
@@ -14,4 +13,14 @@ export async function setItems(db, col, item) {
     await setDoc( docData, item );
     
     return true;
+}
+
+export async function getItemById(db, col, id) {
+    const docRef = doc(db, col, id);
+    const itemSnapshot = await getDoc(docRef);
+    if (itemSnapshot.exists()){
+        return itemSnapshot.data()
+    } else {
+        return {"error": "No hay datos con esa referencia"}
+    }
 }
