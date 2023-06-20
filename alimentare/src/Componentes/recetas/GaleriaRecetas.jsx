@@ -1,77 +1,63 @@
-import Tarjeta from "./RecetaCard.jsx";
-import { React, useState, useEffect } from "react";
-import { getItems } from '../firebase/utils.jsx';
+import { Container, Col, Row } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import db from '../firebase/FirebaseConfig.jsx';
-import Row from 'react-bootstrap/Row';
-import { Container} from 'react-bootstrap';
+import {getItems, setItems}  from '../firebase/utils.jsx';
 
 const COLECCION_RECETAS = 'recetas';
 
-function limitString(inputString, limit) {
-  if (inputString.length <= limit) {
-    return inputString; // Return the original string if it's already within the limit
-  }
-  
-  // Find the last space before the limit
-  const lastSpaceIndex = inputString.lastIndexOf(' ', limit);
+function SubirReceta() {
 
-  if (lastSpaceIndex === -1) {
-    return inputString.substring(0, limit); // If there are no spaces within the limit, return the substring
-  } else {
-    return inputString.substring(0, lastSpaceIndex); // Return the substring until the last space within the limit
-  }
-}
+    getItems(db, COLECCION_RECETAS).then((response) => console.log(response) );
+    
+    const manejaSubmit = (event) => {
+        event.preventDefault(); // Evita la recarga de la página por defecto al enviar el formulario
 
-export default function Recetas() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [recetas, setRecetas] = useState(null);
+        const titulo = document.getElementById('titulo').value;
+        const recetaText = document.getElementById('recetaText').value;
+        const ingredientes = document.getElementById('ingredientes').value;
 
-
-  useEffect(() => {
-    getItems(db, COLECCION_RECETAS)
-    .then((response) => {
-      setRecetas(response); // ⬅️ Guardar datos
-      setIsLoading(false); // ⬅️ Desactivar modo "cargando"
-    });
-  }, []);
-
-  if (isLoading ) { // ⬅️ si está cargando, mostramos un texto que lo indique
+        console.log('Titulo:', titulo);
+        console.log('Receta:', recetaText);
+        console.log('Ingredientes:', ingredientes);
+        setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes});
+    };
     return (
-      <div className="App">
-        <h1>Cargando...</h1>
+      <div className="relative isolate text-center">
+        <h2>Comparta su receta</h2>
+
+        <Container>
+            <Row className='justify-content-center'>
+                <Col sm='10'>
+                    <div className='d-flex flex-column justify-content-center h-custom-2 w-100 pt-4'>
+
+                        {/* Controla los datos enviados por el formulario cuando se hace click en el boton submit */}
+                        <Form onSubmit={manejaSubmit}>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Título de la receta</Form.Label>
+                                <Form.Control id="titulo" type="text" required placeholder="Título de la receta" />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3">
+                                <Form.Label>Ingredientes</Form.Label>
+                                <textarea className="form-control" id="ingredientes" rows="3" required></textarea>
+                            </Form.Group>
+
+                            <Form.Group className="mb-3">
+                                <Form.Label>Receta</Form.Label>
+                                <textarea className="form-control" id="recetaText" rows="5" required></textarea>
+                            </Form.Group>
+
+                            <Button variant="primary" type="submit">
+                                Enviar
+                            </Button>
+                        </Form>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
       </div>
     );
-  }
-
-  return (
-    <div className="relative isolate text-center">
-      <h2>Recetas</h2>
-      <div className="container flex flex-wrap text-center">
-        <Container className='me-auto' >
-
-          <Row md={5} className="g-5">
-            <Tarjeta receta={{
-              Titulo: "Añadir receta", 
-              Receta: "Pulse para subir su receta.",
-              foto: 'https://icon-library.com/images/add-photo-icon/add-photo-icon-17.jpg',
-              subirReceta: true}}
-            />
-
-            {recetas.map((receta, index) => {
-              receta.foto = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Turkish_Food_on_a_Plate.jpg/800px-Turkish_Food_on_a_Plate.jpg';
-              receta.Receta = limitString(receta.Receta, 35) + '...';
-              receta.subirReceta = false;
-
-              return (
-                <div key={index}>
-                  <Tarjeta receta={receta} />
-                </div>
-              );
-            })}
-          </Row>
-
-        </Container>
-      </div>  
-    </div>
-  );
 }
+
+export default SubirReceta;

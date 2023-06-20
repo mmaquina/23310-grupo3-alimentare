@@ -20,7 +20,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 // };
 
 //Configuración de base de datos para rama de Camilo
-const firebaseConfig = {
+const firebaseConfig = { apiKey: "AIzaSyAJHFbhmsNOtyGlRqK0nKq48HGXXHjnGDE",
+  authDomain: "fb-crud-react-a1b57.firebaseapp.com",
+  projectId: "fb-crud-react-a1b57",
+  storageBucket: "fb-crud-react-a1b57.appspot.com",
+  messagingSenderId: "504423365656",
+  appId: "1:504423365656:web:4ef3b2074eb29d5dcdd76d"
 };
 
 const app = initializeApp(firebaseConfig);
