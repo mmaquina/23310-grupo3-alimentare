@@ -28,8 +28,8 @@ const navbarPrincipal = () => {
             <Nav.Link as={Link} to="/Alimentos">Alimentos</Nav.Link>
             <Nav.Link as={Link} to="/Contacto_2">Contacto</Nav.Link>
           </Nav>
-          <Nav.Link as={Link} to="/Login"style={{ padding: '20px' , textAlign:'center'}} >Login</Nav.Link>
-          <Button onClick={logout} variant="outline-dark" style={{ color: 'white',backgroundColor: 'green' }} href="/Login">Logout</Button>
+          <Button as={Link} to="/Login" onClick={logout} variant="outline-dark" style={{ color: 'white',backgroundColor: 'green'}}   href="/Login">Login</Button>
+          <Button onClick={logout} variant="outline-dark" >Logout</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
