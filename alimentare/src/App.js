@@ -9,7 +9,7 @@ import Footer from './Componentes/Footer';
 import Inicio from './Paginas/Inicio';
 import Recetas from './Componentes/recetas/GaleriaRecetas';
 import Receta from './Paginas/Receta';
-import Productos from './Componentes/productos/GaleriaProductos';
+import Alimentos from './Componentes/alimento/GaleriaAlimentos';
 import Contacto from './Paginas/Contacto_2';
 import Login from './Paginas/Login_2';
 import Registro from "./Componentes/RegistroUsuario";
@@ -24,7 +24,7 @@ function App() {
       <Routes>
           <Route path='/'element={ <Inicio />}/>
           <Route path='/Recetas' element={ <Recetas/>}/>
-          <Route path='/Productos' element={ <Productos/>}/>
+          <Route path='/Alimentos' element={ <Alimentos/>}/>
           <Route path='/Login' element={ <Login/>}/>
           <Route path='/Contacto_2'  element={<Contacto/>}/>
           <Route path='/Registro'  element={<Registro/>}/>

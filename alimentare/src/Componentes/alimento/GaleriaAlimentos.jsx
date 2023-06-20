@@ -1,4 +1,4 @@
-import Tarjeta from "./ProductoCard";
+import Tarjeta from "./AlimentoCard";
 import { React, useState, useEffect } from "react";
 import Row from 'react-bootstrap/Row';
 import { Container} from 'react-bootstrap';
@@ -6,9 +6,9 @@ import { Container} from 'react-bootstrap';
 const ENDPOINT = "https://trackapi.nutritionix.com/v2/search/instant?query="
 const prods = ["almonds", "honey", "nuts"]
 
-export default function Productos() {
+export default function Alimentos() {
   const [isLoading, setIsLoading] = useState(true);
-  const [productos, setProductos] = useState(null);
+  const [productos, setAlimentos] = useState(null);
 
   useEffect(() => {
     let prodlist = [];
@@ -21,7 +21,7 @@ export default function Productos() {
         .then((response) => response.json())
           .then((prodj)=> prodlist.push(prodj.common[0]))
       });
-    setProductos(prodlist);
+    setAlimentos(prodlist);
     setIsLoading(false);
   }, []);
 
