@@ -57,6 +57,7 @@ function App() {
       await signInWithPopup(auth, googleProvider);
       limpiarFormulario();
       setMessage("Bienvenido");
+      window.location = '/Recetas';
     } catch (error) {
       console.log(error);
       limpiarFormulario();
