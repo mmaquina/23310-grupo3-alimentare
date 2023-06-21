@@ -13,7 +13,7 @@ function GridExample() {
           <Card>
             <Card.Img variant="top" src={CardImagen} />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
+              <Card.Title>Recetas</Card.Title>
               <Card.Text>
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
