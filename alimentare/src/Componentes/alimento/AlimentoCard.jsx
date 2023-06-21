@@ -2,21 +2,20 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 
 export default function Tarjeta(props) {
-  const link = props.receta.link;
 
   return (
         <Col>
           <Card>
-          <a href={link}><Card.Img
-            src={props.receta.foto} 
+          <Card.Img
+            src={props.producto.foto} 
             position='top' 
-            alt='Agregar receta' 
+            alt='' 
             style={{ maxHeight: '150px', width: '100%', objectFit: 'contain'}} 
-          /></a>
+          />
           <Card.Body>
-            <Card.Title className='text-capitalize'>{props.receta.Titulo}</Card.Title>
-            <Card.Text>
-              {props.receta.Receta}
+            <Card.Title className='text-capitalize'>{props.producto.food_name}</Card.Title>
+            <Card.Text >
+              ${props.producto.tag_id}
             </Card.Text>
           </Card.Body>
           </Card>
