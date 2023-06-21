@@ -19,6 +19,7 @@ function App() {
         const user = userCredential.user;
         console.log(user);
         setMessage("Bienvenido " + userCredential.user.email ); 
+        window.location = '/Recetas';
         limpiarFormulario();
       })
       .catch((error) => {
