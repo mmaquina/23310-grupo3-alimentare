@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Componentes/firebase/FirebaseConfig";
 import { Container, Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -13,11 +13,18 @@ function Registro() {
     try {
       await createUserWithEmailAndPassword(auth, email, password)
       console.log(auth?.currentUser?.email)//Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
-
+      limpiarFormulario();
+      window.location='/Recetas';
     } catch (error) {
       console.log(error)
     }
   };
+
+  function limpiarFormulario() {   
+    
+    document.getElementById('email').value = ''; 
+    document.getElementById('pass').value = ''; 
+  }
 
   return (
     <Container>
@@ -28,7 +35,7 @@ function Registro() {
             <Form>
               <Form.Group className="mb-3" controlId="correo">
                 <Form.Label>Correo Electrónico</Form.Label>
-                <Form.Control type="email" placeholder="ejemplo@mail.com" required name="email" onChange={(e) => setEmail(e.target.value)} />
+                <Form.Control id="email" type="email" placeholder="ejemplo@mail.com" required name="email" onChange={(e) => setEmail(e.target.value)} />
                 <Form.Control.Feedback type="invalid">
                   Por favor ingrese su correo electrónico.
                 </Form.Control.Feedback>
@@ -41,6 +48,7 @@ function Registro() {
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   required
+                  id="pass"
                   name="contrasenia1"
                   type="password"
                   placeholder="Contraseña"

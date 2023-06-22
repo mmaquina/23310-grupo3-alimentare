@@ -20,6 +20,7 @@ function App() {
         console.log(user);
         setMessage("Bienvenido " + userCredential.user.email ); 
         limpiarFormulario();
+        window.location='/Recetas';
       })
       .catch((error) => {
         const errorCode = error.code;
