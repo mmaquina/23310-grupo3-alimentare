@@ -18,7 +18,8 @@ function App() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        setMessage("Bienvenido " + userCredential.user.email ); 
+        // setMessage("Bienvenido " + userCredential.user.email ); 
+        alert("Bienvenido " + userCredential.user.email );
         window.location = '/Recetas';
         limpiarFormulario();
       })
