@@ -21,7 +21,6 @@ function SubirReceta() {
         console.log('Receta:', recetaText);
         console.log('Ingredientes:', ingredientes);
         setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes});
-        window.location = '/Recetas';
     };
     return (
       <div className="relative isolate text-center">
