@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Componentes/firebase/FirebaseConfig";
 import { Container, Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -13,7 +13,7 @@ function Registro() {
     try {
       await createUserWithEmailAndPassword(auth, email, password)
       console.log(auth?.currentUser?.email)//Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
-
+      window.location='/Login';
     } catch (error) {
       console.log(error)
     }

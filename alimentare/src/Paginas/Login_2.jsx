@@ -20,6 +20,7 @@ function App() {
         console.log(user);
         setMessage("Bienvenido " + userCredential.user.email ); 
         limpiarFormulario();
+        window.location='/Recetas';
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -42,6 +43,7 @@ function App() {
             break;
         }     
         limpiarFormulario();   
+        window.location='/Recetas';
       });
   };
 
@@ -56,6 +58,7 @@ function App() {
       await signInWithPopup(auth, googleProvider);
       limpiarFormulario();
       setMessage("Bienvenido");
+      window.location='/Recetas';
     } catch (error) {
       console.log(error);
       limpiarFormulario();
