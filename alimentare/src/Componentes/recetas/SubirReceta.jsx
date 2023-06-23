@@ -21,7 +21,8 @@ function SubirReceta() {
         console.log('Receta:', recetaText);
         console.log('Ingredientes:', ingredientes);
         setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes});
-    };
+        };
+
     return (
       <div className="relative isolate text-center">
         <h2>Comparta su receta</h2>
