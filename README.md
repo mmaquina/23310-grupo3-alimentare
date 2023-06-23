@@ -1,23 +1,80 @@
-# Alimentare
-Sitio de recetas y dietética. Con conexión a base de datos para subir recetas mediante formulario.
-## [Tablero Kanban](https://trello.com/b/fReIANos/alimentare)
-## Tecnologías
-- React
-- Bootstrap
-- Firebase
+# Getting Started with Create React App
 
-Por ahora las variables de entorno permiten usar firebase. Pueden desencriptarse como se indica, o bien usar otras extraidas de otra cuenta de firebase.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Para desencriptar las variables de entorno
-### Git-crypt
-Puedes instalarlo ejecutando el siguiente comando en Linux o en Windows (utilizando WSL): ``sudo apt-get install git-crypt``.
+## Available Scripts
 
-### GPG
-GPG es un sistema de encriptación utilizado para crear, importar, exportar claves públicas y privadas. Puedes descargarlo desde aquí: https://gnupg.org/download/index.html. Solo funciona en una terminal de comandos.
+In the project directory, you can run:
 
-### Agregar variables
-- Usa GPG para crear tu clave ejecutando este comando en tu terminal de comandos preferida: ``gpg --generate-key``.
-- Exporta tu clave pública a un archivo con este comando: ``gpg --export -a TU_NOMBRE_REAL > public.key``.
-- Comparte el archivo de clave generada con el usuario de github mmaquina.
+### `npm start`
 
-Una vez que mmaquina agregue tu clave a la lista de usuarios, ejecuta este comando: ``git-crypt unlock`` para descifrar tus variables de entorno.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### componentes 
+react-bootstrap
+react-router-dom
+react-floating-whatsapp = https://www.npmjs.com/package/react-floating-whatsapp
+mdb-react-ui-kit = Instalacion npm i mdb-react-ui-kit
+
+sitios
+https://mdbootstrap.com/docs/react/extended/login-form/
