@@ -22,7 +22,7 @@ function GridExample() {
        
           <Col>
             <Card>
-            <a href="/Login" className="nav-link  text-body-secondary">
+            <a href="/Recetas" className="nav-link  text-body-secondary">
             <Card.Img variant="top" src={Imagen3} height='250px'/>
               <Card.Body>
                 <Card.Title><strong>Recetas</strong></Card.Title>
@@ -40,7 +40,7 @@ function GridExample() {
             <Card.Body>
               <Card.Title><strong>Compartir</strong></Card.Title>
               <Card.Text>
-                Al loguearte , estaremos en contacto brindandote las mejores propuestas , ademas podras compartir tus recetas y especialidades con otros usuarios.
+                Al loguearte, estaremos en contacto brindandote las mejores propuestas, ademas podras compartir tus recetas y especialidades con otros usuarios.
               </Card.Text>
             </Card.Body>
             </a>
@@ -48,7 +48,7 @@ function GridExample() {
         </Col>
         <Col>
         <Card>
-        <a href="/Login" className="nav-link  text-body-secondary">
+        <a href="/Alimentos" className="nav-link  text-body-secondary">
         <Card.Img variant="top" src={Imagen4} height='250px'/>
           <Card.Body>
             <Card.Title><strong>Venta</strong></Card.Title>
