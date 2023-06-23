@@ -20,7 +20,8 @@ function SubirReceta() {
         console.log('Titulo:', titulo);
         console.log('Receta:', recetaText);
         console.log('Ingredientes:', ingredientes);
-        setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes});
+        setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes})
+        .then(()=> window.location='/Recetas')
     };
     return (
       <div className="relative isolate text-center">
