@@ -22,35 +22,41 @@ function GridExample() {
        
           <Col>
             <Card>
+            <a href="/Recetas" className="nav-link  text-body-secondary">
             <Card.Img variant="top" src={Imagen3} height='250px'/>
               <Card.Body>
-                <Card.Title><strong><a href="/Recetas" className="nav-link  text-body-secondary">Recetas</a></strong></Card.Title>
+                <Card.Title><strong>Recetas</strong></Card.Title>
                 <Card.Text>
                   En esta pagina encontraras recetas variadas de platos muy interesantes, deliciosos, cuidados y explicados paso a paso.
                 </Card.Text>
               </Card.Body>
+              </a>
             </Card>
           </Col>
           <Col>
           <Card>
+          <a href="/Login" className="nav-link  text-body-secondary">
           <Card.Img variant="top" src={Imagen1} height='250px'/>
             <Card.Body>
-              <Card.Title><strong><a href="/Login" className="nav-link  text-body-secondary">Compartir</a></strong></Card.Title>
+              <Card.Title><strong>Compartir</strong></Card.Title>
               <Card.Text>
-                Al loguearte , estaremos en contacto brindandote las mejores propuestas , ademas podras compartir tus recetas y especialidades con otros usuarios.
+                Al loguearte, estaremos en contacto brindandote las mejores propuestas, ademas podras compartir tus recetas y especialidades con otros usuarios.
               </Card.Text>
             </Card.Body>
+            </a>
           </Card>
         </Col>
         <Col>
         <Card>
+        <a href="/Alimentos" className="nav-link  text-body-secondary">
         <Card.Img variant="top" src={Imagen4} height='250px'/>
           <Card.Body>
-            <Card.Title><strong><a href="/Alimentos" className="nav-link">Venta</a></strong></Card.Title>
+            <Card.Title><strong>Venta</strong></Card.Title>
             <Card.Text>
             Además te brindaremos el catálogo completo con productos de primera calidad y a los mejores precios!
             </Card.Text>
           </Card.Body>
+          </a>
         </Card>
       </Col>
         
