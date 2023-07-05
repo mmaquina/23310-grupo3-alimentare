@@ -24,3 +24,7 @@ GPG es un sistema de encriptación utilizado para crear, importar, exportar clav
 - Comparte el archivo de clave generada con el usuario de github mmaquina.
 
 Una vez que mmaquina agregue tu clave a la lista de usuarios, ejecuta este comando: ``git-crypt unlock`` para descifrar tus variables de entorno.
+
+berserl
+
+netlifly

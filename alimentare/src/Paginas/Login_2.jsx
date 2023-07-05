@@ -1,7 +1,7 @@
+import React, { useState } from "react";
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
 import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
 import { Button } from "react-bootstrap";
-import React, { useState } from "react";
 import '../Style/Login_2.css';
 
 function App() {
@@ -18,7 +18,9 @@ function App() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        setMessage("Bienvenido " + userCredential.user.email ); 
+        // setMessage("Bienvenido " + userCredential.user.email ); 
+        alert("Bienvenido " + userCredential.user.email );
+        window.location = '/Recetas';
         limpiarFormulario();
         window.location='/Recetas';
       })
@@ -58,7 +60,6 @@ function App() {
       await signInWithPopup(auth, googleProvider);
       limpiarFormulario();
       setMessage("Bienvenido");
-      window.location='/Recetas';
     } catch (error) {
       console.log(error);
       limpiarFormulario();

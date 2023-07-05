@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 //Importar Componentes
 import NavBar from './Componentes/Navbar';
 import Footer from './Componentes/Footer';
