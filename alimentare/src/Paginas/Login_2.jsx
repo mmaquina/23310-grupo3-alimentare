@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from "react";
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
 import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
 import { Button } from "react-bootstrap";
-import React, { useState } from "react";
 import '../Style/Login_2.css';
 
 function App() {
