@@ -1,3 +1,4 @@
+import React from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Componentes/firebase/FirebaseConfig";
 import { Container, Col, Row } from "react-bootstrap";
