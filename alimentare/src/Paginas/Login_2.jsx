@@ -26,7 +26,7 @@ function App() {
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode)
+        console.log("Salida Error "+errorCode)
         switch (errorCode) {
           case "auth/wrong-password":
             setMessage("La contraseña es incorrecta");
@@ -41,11 +41,11 @@ function App() {
             setMessage("La contraseña no ha sido proporcionada");
             break;
           default:
-            setMessage("");
+            setMessage("Usuario no registrado");
             break;
         }     
         limpiarFormulario();   
-        window.location='/Recetas';
+        window.location='/';
       });
   };
 

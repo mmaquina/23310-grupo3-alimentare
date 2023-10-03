@@ -29,12 +29,12 @@ const navbarPrincipal = () => {
             <Nav.Link as={Link} to="/Alimentos">Alimentos</Nav.Link>
             <Nav.Link as={Link} to="/Contacto_2">Contacto</Nav.Link>
           </Nav>
-          <Button as={Link} to="/Login"  style={{ color: 'white',backgroundColor: 'green'}}   href="/Login">Login</Button>
-          <Button onClick={logout} variant="outline-dark" >Logout</Button>
+          <Button as={Link} to="/Login" style={{ color: 'white', backgroundColor: 'green' }} href="/Login">Login</Button>
+          {/* <Button onClick={logout} variant="outline-dark" >Logout</Button> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    
+
   );
 }
 
