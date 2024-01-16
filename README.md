@@ -1,12 +1,15 @@
 # Alimentare
 Sitio de recetas y dietética. Con conexión a base de datos para subir recetas mediante formulario.
+Control de acceso mediante log de usuarios, tambien conectado a base de datos.
+Permite login con Google.
 ## [Tablero Kanban](https://trello.com/b/fReIANos/alimentare)
 ## Tecnologías
 - React
 - Bootstrap
 - Firebase
-
-Por ahora las variables de entorno permiten usar firebase. Pueden desencriptarse como se indica, o bien usar otras extraidas de otra cuenta de firebase.
+- Consumo de API [Nutritionix](https://www.nutritionix.com/database)
+  
+Por ahora las variables de entorno permiten usar firebase. Pueden desencriptarse como se indica, o bien usar otras extraidas de cuentas propias de firebase y Nutritionix.
 
 ## Para desencriptar las variables de entorno
 ### Git-crypt
