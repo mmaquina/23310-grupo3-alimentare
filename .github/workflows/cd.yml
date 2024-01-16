@@ -1,0 +1,13 @@
+name: PeopleApp frontend Build and Deploy
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+(-stg)?"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+      steps:
+        - name: Echo Environment Tag Name
+            echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
