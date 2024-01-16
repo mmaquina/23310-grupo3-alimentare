@@ -8,6 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-      steps:
-        - name: Echo Environment Tag Name
-            echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
+    steps:
+      - name: Echo Environment Tag Name
+          echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
