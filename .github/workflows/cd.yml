@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Environment Tag Name
-          echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
+        run: echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
