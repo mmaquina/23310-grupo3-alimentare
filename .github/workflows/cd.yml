@@ -3,11 +3,19 @@ name: PeopleApp frontend Build and Deploy
 on:
   push:
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+*"
+      - "v[0-9]+.[0-9]+.[0-9]+-*"
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo Environment Tag Name
-        run: echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
+      - name: Determine Environment Tag Name
+        id: script
+        run: |
+          if [[ ${{ github.ref }} == *"-"* ]]; then 
+            TAG=$(echo "${{ github.ref }}" | awk -F"-" '{print $NF}')
+          else
+            TAG="prod"
+          fi
+          echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
