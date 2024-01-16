@@ -18,4 +18,4 @@ jobs:
           else
             TAG="prod"
           fi
-          echo "environment_tag=$TAG" >> $GITHUB_OUTPUT
+          echo "environment_tag=$TAG"
