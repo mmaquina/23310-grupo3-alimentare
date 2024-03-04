@@ -1,15 +1,10 @@
 import { React, useState, useEffect } from "react";
-import {
-    useParams
-} from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 
 import { getItemById } from '../Componentes/firebase/utils.jsx';
 import db from '../Componentes/firebase/FirebaseConfig.jsx';
 
-
 const COLECCION_RECETAS = 'recetas';
-
 
 export default function Receta() {
     const { id } = useParams();
