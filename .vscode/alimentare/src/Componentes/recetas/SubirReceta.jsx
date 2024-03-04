@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -20,8 +21,7 @@ function SubirReceta() {
         console.log('Titulo:', titulo);
         console.log('Receta:', recetaText);
         console.log('Ingredientes:', ingredientes);
-        setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes})
-        .then(()=> window.location='/Recetas')
+        setItems(db, COLECCION_RECETAS, {'Titulo': titulo, 'Receta': recetaText, 'Ingredientes': ingredientes});
     };
     return (
       <div className="relative isolate text-center">
@@ -33,7 +33,7 @@ function SubirReceta() {
                     <div className='d-flex flex-column justify-content-center h-custom-2 w-100 pt-4'>
 
                         {/* Controla los datos enviados por el formulario cuando se hace click en el boton submit */}
-                        <Form onSubmit={manejaSubmit}>
+                        <Form onSubmit={manejaSubmit} >
                             <Form.Group className="mb-3">
                                 <Form.Label>Título de la receta</Form.Label>
                                 <Form.Control id="titulo" type="text" required placeholder="Título de la receta" />
@@ -52,6 +52,7 @@ function SubirReceta() {
                             <Button variant="primary" type="submit">
                                 Enviar
                             </Button>
+                            
                         </Form>
                     </div>
                 </Col>

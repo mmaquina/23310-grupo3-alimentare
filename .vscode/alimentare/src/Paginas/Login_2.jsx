@@ -1,8 +1,12 @@
-import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
-import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
-import { Button } from "react-bootstrap";
 import React, { useState } from "react";
-import '../Style/Login_2.css';
+import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
+import {
+  signInWithEmailAndPassword,
+  getAuth,
+  signInWithPopup,
+} from "firebase/auth";
+import { Button } from "react-bootstrap";
+import "../Style/Login_2.css";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -18,13 +22,15 @@ function App() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        setMessage("Bienvenido " + userCredential.user.email ); 
+        // setMessage("Bienvenido " + userCredential.user.email );
+        alert("Bienvenido " + userCredential.user.email);
+        window.location = "/Recetas";
         limpiarFormulario();
-        window.location='/Recetas';
+        window.location = "/Recetas";
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode)
+        console.log("Salida Error " + errorCode);
         switch (errorCode) {
           case "auth/wrong-password":
             setMessage("La contraseña es incorrecta");
@@ -39,18 +45,17 @@ function App() {
             setMessage("La contraseña no ha sido proporcionada");
             break;
           default:
-            setMessage("");
+            setMessage("Usuario no registrado");
             break;
-        }     
-        limpiarFormulario();   
-        window.location='/Recetas';
+        }
+        limpiarFormulario();
+        window.location = "/";
       });
   };
 
-  function limpiarFormulario() {   
-    
-    document.getElementById('email').value = ''; 
-    document.getElementById('pass').value = ''; 
+  function limpiarFormulario() {
+    document.getElementById("email").value = "";
+    document.getElementById("pass").value = "";
   }
 
   const signInWithGoogle = async () => {
@@ -58,7 +63,6 @@ function App() {
       await signInWithPopup(auth, googleProvider);
       limpiarFormulario();
       setMessage("Bienvenido");
-      window.location='/Recetas';
     } catch (error) {
       console.log(error);
       limpiarFormulario();
@@ -90,7 +94,9 @@ function App() {
           />
         </div>
         <div className="button-container">
-          <Button variant="success" onClick={signIn}>Enviar</Button>
+          <Button variant="success" onClick={signIn}>
+            Enviar
+          </Button>
         </div>
         {/* Muestra el mensaje que devuelve la base de datos */}
         <p>{message}</p>
