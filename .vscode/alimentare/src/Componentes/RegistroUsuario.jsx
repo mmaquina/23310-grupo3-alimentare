@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Componentes/firebase/FirebaseConfig";
 import { Container, Col, Row } from "react-bootstrap";
@@ -8,15 +8,15 @@ import { useState } from "react";
 
 function Registro() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("");
 
   const signUp = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password)
-      console.log(auth?.currentUser?.email)//Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
-      window.location='/Login';
+      await createUserWithEmailAndPassword(auth, email, password);
+      console.log(auth?.currentUser?.email); //Para saber quien esta logueado. ademas los signos de interrogacion sirven para indicar que no lea una variable antes de que tenga valor por eso no da error si no hay nadie logueado
+      window.location = "/Login";
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -29,7 +29,13 @@ function Registro() {
             <Form>
               <Form.Group className="mb-3" controlId="correo">
                 <Form.Label>Correo Electrónico</Form.Label>
-                <Form.Control type="email" placeholder="ejemplo@mail.com" required name="email" onChange={(e) => setEmail(e.target.value)} />
+                <Form.Control
+                  type="email"
+                  placeholder="ejemplo@mail.com"
+                  required
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <Form.Control.Feedback type="invalid">
                   Por favor ingrese su correo electrónico.
                 </Form.Control.Feedback>

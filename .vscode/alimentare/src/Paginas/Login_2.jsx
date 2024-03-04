@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { auth, googleProvider } from "../Componentes/firebase/FirebaseConfig";
-import { signInWithEmailAndPassword, getAuth, signInWithPopup } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  getAuth,
+  signInWithPopup,
+} from "firebase/auth";
 import { Button } from "react-bootstrap";
-import '../Style/Login_2.css';
+import "../Style/Login_2.css";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -18,15 +22,15 @@ function App() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        // setMessage("Bienvenido " + userCredential.user.email ); 
-        alert("Bienvenido " + userCredential.user.email );
-        window.location = '/Recetas';
+        // setMessage("Bienvenido " + userCredential.user.email );
+        alert("Bienvenido " + userCredential.user.email);
+        window.location = "/Recetas";
         limpiarFormulario();
-        window.location='/Recetas';
+        window.location = "/Recetas";
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log("Salida Error "+errorCode)
+        console.log("Salida Error " + errorCode);
         switch (errorCode) {
           case "auth/wrong-password":
             setMessage("La contraseña es incorrecta");
@@ -43,16 +47,15 @@ function App() {
           default:
             setMessage("Usuario no registrado");
             break;
-        }     
-        limpiarFormulario();   
-        window.location='/';
+        }
+        limpiarFormulario();
+        window.location = "/";
       });
   };
 
-  function limpiarFormulario() {   
-    
-    document.getElementById('email').value = ''; 
-    document.getElementById('pass').value = ''; 
+  function limpiarFormulario() {
+    document.getElementById("email").value = "";
+    document.getElementById("pass").value = "";
   }
 
   const signInWithGoogle = async () => {
@@ -91,7 +94,9 @@ function App() {
           />
         </div>
         <div className="button-container">
-          <Button variant="success" onClick={signIn}>Enviar</Button>
+          <Button variant="success" onClick={signIn}>
+            Enviar
+          </Button>
         </div>
         {/* Muestra el mensaje que devuelve la base de datos */}
         <p>{message}</p>

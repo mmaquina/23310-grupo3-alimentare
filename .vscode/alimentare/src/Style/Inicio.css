@@ -1,4 +1,5 @@
-.card-img-top {
+.card-img {
+    
     height: 11vw; /* Altura proporcional al ancho */
-    object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio */
+    object-fit: cover ; /* Ajusta la imagen para cubrir todo el espacio */
 }

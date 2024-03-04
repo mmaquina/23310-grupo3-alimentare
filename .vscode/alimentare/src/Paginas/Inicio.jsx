@@ -13,9 +13,7 @@ function GridExample() {
   return (
     <>
       <Container>
-        {" "}
-        <Card.Img variant="top" src={Imagen2} />
-        <Container className="me-auto"></Container>
+        <Card.Img  src={Imagen2} />
         <div class="container" style={{ padding: "20px", textAlign: "center" }}>
           <h3>
             Sobre Nosotros: <br />
@@ -66,7 +64,7 @@ function GridExample() {
                   <Card.Title>
                     <strong>Venta</strong>
                   </Card.Title>
-                  <Card.Text>
+                  <Card.Text >
                     Además te brindaremos el catálogo completo con productos de
                     primera calidad y a los mejores precios!
                   </Card.Text>
